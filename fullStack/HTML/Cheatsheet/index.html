@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheatsheet</title>
+  <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="topic-container">
+    <h1>Box sizing</h1>
+    <p>The div below contains two boxes that have the same width and height. The red box has <span class="css-rule">box-sizing: content-box</span> (the default value), while the blue box has <span class="css-rule">box-sizing: border-box</span>.</p> 
+    <div id="box-size-demo1">
+      <div class="default box red"></div>
+      <div class="default box blue"></div>
+    </div>
+    <p>The red box's width and height describe only the content, and does not include the padding. The blue boxes width and height is of the whole box (including padding and border).</p>
+    <h3>Summary</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>CSS property</th>
+          <th>Value</th>
+          <th>Effect</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>box-sizing</td>
+          <td>content-box</td>
+          <td>Width and height limit the content array of the element</td>
+        </tr>
+        <tr>
+          <td>box-sizing</td>
+          <td>border-box</td>
+          <td>Width and height describe the whole element, including padding and border.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

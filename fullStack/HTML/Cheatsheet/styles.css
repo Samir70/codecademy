@@ -1,0 +1,47 @@
+p {
+  font-size: 2em;
+}
+#box-size-demo1 {
+  width: 600px;
+  height: fit-content;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  padding: 30px;
+  margin: 15px;
+  border: 3px solid black;
+  display: inline-block;
+}
+
+.red {
+  background-color: red;
+  box-sizing: content-box;
+}
+
+.blue {
+  background-color: blue;
+  box-sizing: border-box;
+}
+
+.css-rule {
+  font-weight: bold;
+}
+
+th {
+  background-color: lightcyan;
+}
+
+th, td, table {
+  border: 1px solid black;
+  padding: 2px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 1.5em;
+}
