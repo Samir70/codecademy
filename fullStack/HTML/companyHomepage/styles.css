@@ -12,4 +12,7 @@ nav ul li {
 nav ul {
   display: flex;
   justify-content: flex-end;
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }
