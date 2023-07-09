@@ -14,4 +14,8 @@ const endings = [
   "all was darkness.",
   "the story ended suddenly.",
   "we all began to laugh."
-]
+];
+
+module.exports = {
+  starters, middles, endings
+}
