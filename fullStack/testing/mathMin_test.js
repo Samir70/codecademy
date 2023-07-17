@@ -12,3 +12,9 @@ describe('Math', () => {
     });
   });
 });
+
+/**
+ * assert.equal
+ * .strictEqual
+ * .deepEqual (for objects)
+ */
