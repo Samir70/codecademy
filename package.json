@@ -4,14 +4,14 @@
   "description": "notes from taking courses on codecademy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha 'fullStack/testing/*.js'"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Samir70/codecademy.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "",
   "bugs": {
     "url": "https://github.com/Samir70/codecademy/issues"
   },
