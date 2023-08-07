@@ -66,3 +66,31 @@ This indicates that the file should be processed as a CSS module. Then, it must 
 If a component has to have state, make calculations based on props, or manage any other complex logic, then that component shouldn’t also have to render HTML-like JSX.
 
 The functional part of a component (state, calculations, etc.) can be separated into a container component.
+
+## Prop Types
+
+```
+import PropTypes from 'prop-types';
+
+export class MessageDisplayer extends React.Component {
+  render() {
+    return <h1>{this.props.message}</h1>;
+  }
+}
+
+// This propTypes object should have
+// one property for each expected prop:
+MessageDisplayer.propTypes = {
+  message: PropTypes.string
+};
+
+// Or, for functional components:
+const Example = (props) => {
+  return <h1>{props.message}</h1>;
+}
+ 
+Example.propTypes = {
+  message: PropTypes.string.isRequired
+};
+ 
+```
