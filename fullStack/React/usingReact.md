@@ -60,3 +60,9 @@ This indicates that the file should be processed as a CSS module. Then, it must 
  From this import, we can see that the styles object now holds the class selectors of fileName.module.css. To access the selectors, we use the dot notation like so:
 
 ```<div className={styles.divStyle}></div>```
+
+## Seperating containers and presentational components
+
+If a component has to have state, make calculations based on props, or manage any other complex logic, then that component shouldn’t also have to render HTML-like JSX.
+
+The functional part of a component (state, calculations, etc.) can be separated into a container component.
