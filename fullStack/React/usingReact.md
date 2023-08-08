@@ -94,3 +94,13 @@ Example.propTypes = {
 };
  
 ```
+
+## React router
+
+nb: version 6 has breaking changes.
+
+```
+npm install --save react-router-dom@5.2.0
+// in js file 
+import { BrowserRouter as Router } from ‘react-router-dom’
+```
