@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Samir70/codecademy#readme",
   "devDependencies": {
     "mocha": "^10.2.0"
+  },
+  "dependencies": {
+    "redux": "^4.2.1"
   }
 }
