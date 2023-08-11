@@ -36,3 +36,21 @@ let reminder = remindMeLater("walk the dog") // we have made a thunk
 console.log(reminder) // [Function] 
 console.log(reminder()) // Remember to walk the dog!!!
 ```
+
+## Action creators that return thunks
+
+```js
+import { fetchUser } from './api'
+const getUser = (id) => {
+  return async (dispatch, getState) => {
+    const payload = await fetchUser(id);
+    dispatch({type: 'users/addUser', payload: payload});
+  }
+}
+```
+
+To get the user with id = 32, we can call `dispatch(getUser(32))`. Note that the argument to dispatch is not an object, but an asynchronous function that will first fetch the user’s data and then dispatch a synchronous action once the user’s information has been retrieved. 
+
+## How?
+
+... the redux-thunk middleware performs a simple check to the argument passed to dispatch. If dispatch receives a function, the middleware invokes it; if it receives a plain object, then it passes that action along to reducers to trigger state updates.
