@@ -54,3 +54,51 @@ To get the user with id = 32, we can call `dispatch(getUser(32))`. Note that the
 ## How?
 
 ... the redux-thunk middleware performs a simple check to the argument passed to dispatch. If dispatch receives a function, the middleware invokes it; if it receives a plain object, then it passes that action along to reducers to trigger state updates.
+
+## Real life async - pending states
+
+Let users know what is going on: pending/request failed/etc
+
+```js
+import { fetchUser } from './api'
+const fetchUserById = (id) => {
+  return async (dispatch, getState) => {
+    dispatch({type: 'users/requestPending'})
+    try {
+      const payload = await fetchUser(id)
+      dispatch({type: 'users/addUser', payload: payload})
+    } catch(err) {
+      dispatch({type: 'users/error', payload: err})
+    }
+  }
+}
+ 
+```
+
+This pattern is so common that Redux Toolkit provides a neat abstraction, createAsyncThunk, for including promise lifecycle actions in your Redux apps.
+
+```js
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import { fetchUser } from './api'
+const fetchUserById = createAsyncThunk(
+  'users/fetchUserById', // action type
+  async (arg, thunkAPI) => { // payload creator
+    // arg is whatever was passed to fetchUserById when it is called
+    // in real life: name this something like userID
+    const response = await fetchUser(arg);
+    const json = await response.json() // also async
+    return json
+  }
+)
+```
+
+nb: this doesn’t dispatch any actions at all. It just returns the result of an asynchronous operation. `createAsyncThunk` takes care of the rest, returning an action creator that will dispatch pending/fulfilled/rejected actions as appropriate. 
+
+If you pass the action type string `resourceType/actionType` to createAsyncThunk, it will produce these three action types:
+
+```
+'resourceType/actionType/pending'
+'resourceType/actionType/fulfilled'
+'resourceType/actionType/rejected'
+```
+
