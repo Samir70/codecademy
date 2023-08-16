@@ -45,3 +45,14 @@ app.use((err, req, res, next) => {
   const status = err.status || 500;
   res.status(status).send(err.message);
 });
+
+///////////////////////////////////////
+const timeMiddleware = (req, res, next) => {
+  req.date = Date.now()
+  next()
+};
+app.use(timeMiddleware)
+
+app.get('/snacks', (req, res, next) => {
+  res.send(`Snacks as of ${req.date}: ${database.snacks}`);
+});
