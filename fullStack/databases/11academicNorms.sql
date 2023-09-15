@@ -1,0 +1,10 @@
+-- 1NF (normal form)
+-- data in each cell must be atomic 
+-- cannot have two title in one row of the book_title column 
+-- 'The Lord of the Rings, The Hobbit' would need to be split to two rows.
+-- 
+-- 2NF
+-- one primary key per table, 
+-- so, if book_id and author_id are in same table, 
+-- one is a foreign key referencing another table
+-- two tables keeps us from deleting ref to an author when we delete all his books.
