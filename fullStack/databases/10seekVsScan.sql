@@ -1,0 +1,7 @@
+-- A scan searches through every record in a database table/view 
+-- to find the records being asked for.
+-- 
+-- A seek uses an index to jump to the location where the record is stored.
+-- 
+-- Even if there is an index on the column being searched:
+-- There is no benefit to using seek if it involves returning 50-75% of the table
