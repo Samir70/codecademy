@@ -25,14 +25,28 @@ const merge = (leftArray, rightArray) => {
       sortedArray.push(rightArray.shift());
     }
   }
-  console.log({sortedArray})
+  console.log({ sortedArray })
   return sortedArray
 };
 
-const inputArr = [3, 5, 2, 90, 4, 7];
+// const merge = (leftArray, rightArray) => {
+//   const sortedArray = []
+//   while (leftArray.length > 0 && rightArray.length > 0) {
+//     if (leftArray[0] < rightArray[0]) {
+//       sortedArray.push(leftArray[0]);
+//       leftArray.shift();
+//     } else {
+//       sortedArray.push(rightArray[0]);
+//       rightArray.shift();
+//     }
+//   }
 
-console.log(mergeSort(inputArr));
+//   return sortedArray.concat(leftArray).concat(rightArray);
 
-module.exports = {
-  mergeSort,
-};
+  const inputArr = [3, 5, 2, 90, 4, 7];
+
+  console.log(mergeSort(inputArr));
+
+  module.exports = {
+    mergeSort,
+  };
