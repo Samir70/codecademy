@@ -65,6 +65,12 @@ const findBinSearch = (nums, target) => {
 ### Test the Solution
 
 Talk through a dry run
+Offer improvements: the above is O(nlogn) because of the sorting and because we do binary search n times.
+
+This can be improved by using two pointers in the sorted list. 
+
+- left + right < target: go to next left
+- left + right > target: go to previous right
 
 ### Analyze the Solution
 Use big O notation.
