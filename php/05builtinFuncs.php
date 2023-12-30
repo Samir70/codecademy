@@ -15,11 +15,14 @@ echo var_dump($second);
 // String functions
 echo strrev("Hello, World!"); // Prints: !dlroW ,olleH
 echo strtolower("HeLLo"); // Prints: hello
+echo strlen("HeLLo"); // Prints: 5
 echo str_repeat("hi", 10); // Prints: hihihihihihihihihihi 
 
 $story = "I was like, \"Dude, like just tell me what you like think because like everyone else is like being totally honest, and like I just want to know what you like think.\" So like I don't know...";
 
 echo substr_count($story, "like"); // Prints: 8
+
+$current_month = date("F"); // "December"
 
 // number functions
 echo abs(-10.99); // Prints: 10.99
